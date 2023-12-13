@@ -32,6 +32,11 @@ nav a:hover {
     color: #e0e0e0;
 }
 
+.hover-animate {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
 #hero {
     text-align: center;
     padding: 50px;
