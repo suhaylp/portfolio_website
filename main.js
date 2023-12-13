@@ -11,3 +11,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const navButtons = document.querySelectorAll('nav ul li a');
+
+    navButtons.forEach(button => {
+        button.addEventListener('mouseenter', () => {
+            button.classList.add('hover-animate');
+        });
+
+        button.addEventListener('mouseleave', () => {
+            button.classList.remove('hover-animate');
+        });
+    });
+});
