@@ -1,96 +1,140 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Home - Suhayl Patel's Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            color: #000;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-        header {
-            background: #d3d3d3;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #808080 3px solid;
-        }
-        header a {
-            color: #000;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
-        }
-        header ul {
-            padding: 0;
-            list-style: none;
-            text-align: center;
-        }
-        header li {
-            display: inline;
-            margin: 0 20px;
-        }
-        header #branding {
-            float: left;
-        }
-        header #branding h1 {
-            margin: 0;
-        }
-        header nav {
-            float: right;
-            margin-top: 10px;
-        }
-        header .highlight, header .current a {
-            font-weight: bold;
-        }
-        header a:hover {
-            color: #808080;
-            font-weight: bold;
-        }
-        .showcase {
-            min-height: 400px;
-            text-align: center;
-        }
-        .showcase h1 {
-            margin-top: 100px;
-            font-size: 55px;
-            margin-bottom: 10px;
-        }
-        .showcase p {
-            font-size: 20px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header>
-        <div class="container">
-            <div id="branding">
-                <h1><a href="home.html">Suhayl Patel</a></h1>
-            </div>
-            <nav>
-                <ul>
-                    <li class="current"><a href="home.html">Home</a></li>
-                    <li><a href="about.html">About Me</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#tutoring">Tutoring</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
-    
-    <div class="container">
-        <section class="showcase">
-            <h1>WEBSITE IN PROGRESS</h1>
-            <p>Hi, I'm Suhayl Patel, a computer science student passionate about problem solving and teaching.</p>
+    <main>
+        <section id="hero">
+            <h1>Hi, I'm Suhayl.</h1>
+            <p>University of British Columbia | Computer Science</p>
+            <div class="social-links">
+                <button onclick="location.href='https://github.com/suhaylp';">GitHub</button>
+                <button onclick="location.href='https://linkedin.com/in/suhaylp';">LinkedIn</button>
+                <button onclick="location.href='current_resume.pdf';">Resume</button>
+            </div>
         </section>
-    </div>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>[Bio will go here]</p>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <p>[Details of projects will go here]</p>
+        </section>
+        <section id="tutoring">
+            <h2>Tutoring</h2>
+            <p>[Information about tutoring will go here]</p>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>[Contact information will go here]</p>
+        </section>
+    </main>
+    <footer>
+        <p>© 2023 Suhayl Patel</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #121212;
+    color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1a1a1a;
+    text-align: center;
+    padding: 1em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav a {
+    color: #f5f5f5;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #e0e0e0;
+}
+
+#hero {
+    text-align: center;
+    padding: 50px;
+    background-color: #282828;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+.social-links button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.social-links button:hover {
+    background-color: #555;
+}
+
+footer {
+    font-size: 0.8em;
+    text-align: center;
+    padding: 20px;
+    background-color: #1a1a1a;
+}
+
+@media screen and (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if(targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+});
