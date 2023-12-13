@@ -38,6 +38,11 @@ nav a:hover {
     background-color: #282828;
 }
 
+section {
+    padding-left: 20px;
+}
+
+
 h1 {
     font-size: 2.5em;
 }
@@ -50,6 +55,12 @@ h1 {
     margin: 10px;
     cursor: pointer;
     transition: background-color 0.3s;
+}
+
+.social-links button img {
+    height: 20px; 
+    width: auto;
+    margin-right: 5px;
 }
 
 .social-links button:hover {
